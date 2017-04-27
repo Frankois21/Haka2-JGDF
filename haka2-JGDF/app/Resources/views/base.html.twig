@@ -20,14 +20,20 @@
             <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
 
                 <a href="{{ path('category_index') }}" class="navbar-btn">Editer</a>
-                <a href="{{ path('category_new') }}" class="navbar-btn">Nouveau</a>
+                <a href="{{ path('category_new') }}" class="navbar-btn">Nouvelle caté</a>
+                <a href="{{ path('questrep_new') }}" class="navbar-btn">Nouvelle question</a>
+                <a href="{{ path('category_new') }}" class="navbar-btn">Nouvelle caté</a>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
 
 </head>
 <body>
-{% block body %}{% endblock %}
+{% block body %}
+
+
+
+{% endblock %}
 {% block javascripts %}
     <script
             src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -35,5 +41,9 @@
             crossorigin="anonymous"></script>
     <script src="{{ asset('js/bootstrap.js') }}"></script>
 {% endblock %}
+
+</div>
+    </div>
+</div>
 </body>
 </html>
