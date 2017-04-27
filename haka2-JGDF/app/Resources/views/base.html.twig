@@ -5,6 +5,17 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="author" content="SemiColonWeb"/>
+        <script type="text/javascript" src="../js/jquery.js"></script>
+
+        <!-- Stylesheets
+        ============================================= -->
+        <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Roboto:300,400,500,700" rel="stylesheet" type="text/css" />
+
+        <link rel="stylesheet" href="../css/bootstrap.css" type="text/css" />
     </head>
     <body>
         {% block body %}{% endblock %}
