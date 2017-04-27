@@ -12,6 +12,14 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('quizzBundle:Default:index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+
+        $cates = $em->getRepository('quizzBundle:Category')->findAll();
+
+        return $this->render('quizzBundle:Default:index.html.twig',
+                                ['cate' => $cates]);
     }
+
+
+
 }

@@ -9,9 +9,9 @@
         <h1>Choisir une catégorie</h1>
         <p>Bienvenue sur notre super jeu</p>
 
-        <p>
-
-        </p>
+        {% for categorie in cate %}
+       <a href="#">{{ categorie.category}}</a></br>
+            {% endfor %}
     </div>
 </div>
 
