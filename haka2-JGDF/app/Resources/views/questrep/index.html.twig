@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Questreps list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Intitule</th>
+                <th>Reponse1</th>
+                <th>Reponse2</th>
+                <th>Reponse3</th>
+                <th>Reponse4</th>
+                <th>Solution</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for questrep in questreps %}
+            <tr>
+                <td><a href="{{ path('questrep_show', { 'id': questrep.id }) }}">{{ questrep.id }}</a></td>
+                <td>{{ questrep.intitule }}</td>
+                <td>{{ questrep.reponse1 }}</td>
+                <td>{{ questrep.reponse2 }}</td>
+                <td>{{ questrep.reponse3 }}</td>
+                <td>{{ questrep.reponse4 }}</td>
+                <td>{{ questrep.solution }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('questrep_show', { 'id': questrep.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('questrep_edit', { 'id': questrep.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('questrep_new') }}">Create a new questrep</a>
+        </li>
+    </ul>
+{% endblock %}
