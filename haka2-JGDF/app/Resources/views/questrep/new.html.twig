@@ -1,16 +1,22 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Questrep creation</h1>
+
+<div class="container-fluid">
+    <div class="col-lg-12">
+        <div class="row">
+
+        <h1>Création</h1>
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+        <input type="submit" value="valider" />
     {{ form_end(form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('questrep_index') }}">Back to the list</a>
-        </li>
-    </ul>
+            <a href="{{ path('questrep_index') }}">Liste des questions</a>
+
+
+        </div>
+    </div>
+</div>
 {% endblock %}

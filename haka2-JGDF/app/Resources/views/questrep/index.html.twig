@@ -1,17 +1,19 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Questreps list</h1>
-
+<div class="container-fluid">
+    <div class="table table-hover">
+    <h1>Liste de question</h1>
+                <a href="{{ path('questrep_new') }}"class="btn btn-success">Créer une nouvelle question</a>
     <table>
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Intitule</th>
-                <th>Reponse1</th>
-                <th>Reponse2</th>
-                <th>Reponse3</th>
-                <th>Reponse4</th>
+                <th>R1</th>
+                <th>R2</th>
+                <th>R3</th>
+                <th>R4</th>
                 <th>Solution</th>
                 <th>Actions</th>
             </tr>
@@ -27,23 +29,15 @@
                 <td>{{ questrep.reponse4 }}</td>
                 <td>{{ questrep.solution }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('questrep_show', { 'id': questrep.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('questrep_edit', { 'id': questrep.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                    <a href="{{ path('questrep_show', { 'id': questrep.id }) }}"class="btn btn-default">show</a>
+                    <a href="{{ path('questrep_edit', { 'id': questrep.id }) }}"class="btn btn-default">edit</a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
-    </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('questrep_new') }}">Create a new questrep</a>
-        </li>
-    </ul>
+    </table>
+        </div>
+    </div>
+
 {% endblock %}
