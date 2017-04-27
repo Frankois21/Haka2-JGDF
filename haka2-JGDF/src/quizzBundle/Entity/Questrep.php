@@ -65,7 +65,7 @@ class Questrep
 
 
     /**
-     * @var
+     * @var string
      *
      * @ORM\ManyToOne(targetEntity="Category", inversedBy="questreps")
      */
