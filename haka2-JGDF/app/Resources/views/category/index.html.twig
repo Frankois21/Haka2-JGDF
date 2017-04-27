@@ -7,21 +7,20 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Categorie</th>
+                <th>Catégorie</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
 
-        <a href="{{ path('category_new') }}" class="btn btn-success">Create a new category</a>
+        <a href="{{ path('category_new') }}" class="btn btn-success">Création nouvelle catégorie</a>
         {% for category in categories %}
             <tr>
                 <td><a href="{{ path('category_show', { 'id': category.id }) }}">{{ category.id }}</a></td>
                 <td>{{ category.category }}</td>
                 <td>
-
-                            <a href="{{ path('category_show', { 'id': category.id }) }}" class="btn btn-default">Edition</a>
-                            <a href="{{ path('category_edit', { 'id': category.id }) }}" class="btn btn-default">Changer</a>
+                    <a href="{{ path('category_show', { 'id': category.id }) }}" class="btn btn-default">Edition</a>
+                    <a href="{{ path('category_edit', { 'id': category.id }) }}" class="btn btn-default">Changer</a>
                 </td>
             </tr>
         {% endfor %}
