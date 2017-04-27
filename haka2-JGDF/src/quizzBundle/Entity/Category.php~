@@ -71,39 +71,55 @@ class Category
     {
         return $this->category;
     }
-
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->question = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
-     * Add questrep
+     * Add question
      *
-     * @param \quizzBundle\Entity\Questrep $questrep
+     * @param \quizzBundle\Entity\Question $question
      *
      * @return Category
      */
-    public function addQuestrep(\quizzBundle\Entity\Questrep $questrep)
+    public function addQuestion(\quizzBundle\Entity\Question $question)
     {
-        $this->questreps[] = $questrep;
+        $this->question[] = $question;
 
         return $this;
     }
 
     /**
-     * Remove questrep
+     * Remove question
      *
-     * @param \quizzBundle\Entity\Questrep $questrep
+     * @param \quizzBundle\Entity\Question $question
      */
-    public function removeQuestrep(\quizzBundle\Entity\Questrep $questrep)
+    public function removeQuestion(\quizzBundle\Entity\Question $question)
     {
-        $this->questreps->removeElement($questrep);
+        $this->question->removeElement($question);
     }
 
     /**
-     * Get questreps
+     * Get question
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getQuestreps()
+    public function getQuestion()
     {
-        return $this->questreps;
+        return $this->question;
+    }
+
+    /**
+     * Get questions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getQuestions()
+    {
+        return $this->questions;
     }
 }
