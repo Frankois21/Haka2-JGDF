@@ -5,12 +5,12 @@ namespace quizzBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * score
+ * Score
  *
  * @ORM\Table(name="score")
- * @ORM\Entity(repositoryClass="quizzBundle\Repository\scoreRepository")
+ * @ORM\Entity(repositoryClass="quizzBundle\Repository\ScoreRepository")
  */
-class score
+class Score
 {
     /**
      * @var int
@@ -32,3 +32,4 @@ class score
         return $this->id;
     }
 }
+

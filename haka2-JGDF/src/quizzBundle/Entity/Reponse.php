@@ -5,12 +5,12 @@ namespace quizzBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * reponse
+ * Reponse
  *
  * @ORM\Table(name="reponse")
- * @ORM\Entity(repositoryClass="quizzBundle\Repository\reponseRepository")
+ * @ORM\Entity(repositoryClass="quizzBundle\Repository\ReponseRepository")
  */
-class reponse
+class Reponse
 {
     /**
      * @var int
@@ -44,7 +44,7 @@ class reponse
      *
      * @param string $reponse
      *
-     * @return reponse
+     * @return Reponse
      */
     public function setReponse($reponse)
     {
@@ -63,3 +63,4 @@ class reponse
         return $this->reponse;
     }
 }
+

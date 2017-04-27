@@ -5,12 +5,12 @@ namespace quizzBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * question
+ * Question
  *
  * @ORM\Table(name="question")
- * @ORM\Entity(repositoryClass="quizzBundle\Repository\questionRepository")
+ * @ORM\Entity(repositoryClass="quizzBundle\Repository\QuestionRepository")
  */
-class question
+class Question
 {
     /**
      * @var int
@@ -24,7 +24,7 @@ class question
     /**
      * @var string
      *
-     * @ORM\Column(name="intitule", type="text", nullable=true, unique=true)
+     * @ORM\Column(name="intitule", type="string", length=255, unique=true)
      */
     private $intitule;
 
@@ -44,7 +44,7 @@ class question
      *
      * @param string $intitule
      *
-     * @return question
+     * @return Question
      */
     public function setIntitule($intitule)
     {
@@ -63,3 +63,4 @@ class question
         return $this->intitule;
     }
 }
+
