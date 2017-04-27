@@ -5,12 +5,12 @@ namespace quizzBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Category
+ * reponse
  *
- * @ORM\Table(name="category")
- * @ORM\Entity(repositoryClass="quizzBundle\Repository\CategoryRepository")
+ * @ORM\Table(name="reponse")
+ * @ORM\Entity(repositoryClass="quizzBundle\Repository\reponseRepository")
  */
-class Category
+class reponse
 {
     /**
      * @var int
@@ -24,9 +24,9 @@ class Category
     /**
      * @var string
      *
-     * @ORM\Column(name="category", type="string", length=255)
+     * @ORM\Column(name="reponse", type="string", length=255, unique=true)
      */
-    private $category;
+    private $reponse;
 
 
     /**
@@ -40,26 +40,27 @@ class Category
     }
 
     /**
-     * Set category
+     * Set reponse
      *
-     * @param string $category
+     * @param string $reponse
      *
-     * @return Category
+     * @return reponse
      */
-    public function setCategory($category)
+    public function setReponse($reponse)
     {
-        $this->category = $category;
+        $this->reponse = $reponse;
 
         return $this;
     }
 
     /**
-     * Get category
+     * Get reponse
      *
      * @return string
      */
-    public function getCategory()
+    public function getReponse()
     {
-        return $this->category;
+        return $this->reponse;
     }
 }
+
