@@ -10,4 +10,5 @@ namespace quizzBundle\Repository;
  */
 class QuestrepRepository extends \Doctrine\ORM\EntityRepository
 {
+
 }

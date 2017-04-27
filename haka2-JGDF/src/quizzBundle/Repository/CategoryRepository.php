@@ -10,4 +10,9 @@ namespace quizzBundle\Repository;
  */
 class CategoryRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function cate()
+    {
+
+
+    }
 }
