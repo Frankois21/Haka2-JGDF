@@ -30,6 +30,21 @@ class Question
 
 
     /**
+     * @var string
+     *
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="questions")
+     */
+    private $category;
+
+    /**
+     * @var
+     *
+     * @ORM\OneToMany(targetEntity="Reponse", mappedBy="questions")
+     */
+    private $reponses;
+
+
+    /**
      * Get id
      *
      * @return int

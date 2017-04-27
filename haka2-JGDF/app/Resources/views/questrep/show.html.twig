@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Questrep</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ questrep.id }}</td>
+            </tr>
+            <tr>
+                <th>Intitule</th>
+                <td>{{ questrep.intitule }}</td>
+            </tr>
+            <tr>
+                <th>Reponse1</th>
+                <td>{{ questrep.reponse1 }}</td>
+            </tr>
+            <tr>
+                <th>Reponse2</th>
+                <td>{{ questrep.reponse2 }}</td>
+            </tr>
+            <tr>
+                <th>Reponse3</th>
+                <td>{{ questrep.reponse3 }}</td>
+            </tr>
+            <tr>
+                <th>Reponse4</th>
+                <td>{{ questrep.reponse4 }}</td>
+            </tr>
+            <tr>
+                <th>Solution</th>
+                <td>{{ questrep.solution }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('questrep_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('questrep_edit', { 'id': questrep.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

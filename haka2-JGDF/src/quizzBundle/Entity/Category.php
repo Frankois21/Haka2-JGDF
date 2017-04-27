@@ -24,9 +24,18 @@ class Category
     /**
      * @var string
      *
-     * @ORM\Column(name="category", type="string", length=255)
+     * @ORM\Column(name="Category", type="string", length=255)
      */
     private $category;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\OneToMany(targetEntity="Questrep", mappedBy="category")
+     */
+    private $questreps;
+
 
 
     /**
@@ -61,5 +70,40 @@ class Category
     public function getCategory()
     {
         return $this->category;
+    }
+
+
+    /**
+     * Add questrep
+     *
+     * @param \quizzBundle\Entity\Questrep $questrep
+     *
+     * @return Category
+     */
+    public function addQuestrep(\quizzBundle\Entity\Questrep $questrep)
+    {
+        $this->questreps[] = $questrep;
+
+        return $this;
+    }
+
+    /**
+     * Remove questrep
+     *
+     * @param \quizzBundle\Entity\Questrep $questrep
+     */
+    public function removeQuestrep(\quizzBundle\Entity\Questrep $questrep)
+    {
+        $this->questreps->removeElement($questrep);
+    }
+
+    /**
+     * Get questreps
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getQuestreps()
+    {
+        return $this->questreps;
     }
 }

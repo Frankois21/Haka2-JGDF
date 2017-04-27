@@ -30,6 +30,13 @@ class Reponse
 
 
     /**
+     * @var string
+     *
+     * @ORM\ManyToOne(targetEntity="Question", inversedBy="reponses")
+     */
+    private $questions;
+
+    /**
      * Get id
      *
      * @return int
@@ -63,4 +70,3 @@ class Reponse
         return $this->reponse;
     }
 }
-

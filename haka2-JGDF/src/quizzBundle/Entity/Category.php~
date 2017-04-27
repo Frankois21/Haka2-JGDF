@@ -24,9 +24,18 @@ class Category
     /**
      * @var string
      *
-     * @ORM\Column(name="category", type="string", length=255)
+     * @ORM\Column(name="Category", type="string", length=255)
      */
     private $category;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\OneToMany(targetEntity="Questrep", mappedBy="category")
+     */
+    private $questreps;
+
 
 
     /**
@@ -62,5 +71,55 @@ class Category
     {
         return $this->category;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->question = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Add question
+     *
+     * @param \quizzBundle\Entity\Question $question
+     *
+     * @return Category
+     */
+    public function addQuestion(\quizzBundle\Entity\Question $question)
+    {
+        $this->question[] = $question;
+
+        return $this;
+    }
+
+    /**
+     * Remove question
+     *
+     * @param \quizzBundle\Entity\Question $question
+     */
+    public function removeQuestion(\quizzBundle\Entity\Question $question)
+    {
+        $this->question->removeElement($question);
+    }
+
+    /**
+     * Get question
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getQuestion()
+    {
+        return $this->question;
+    }
+
+    /**
+     * Get questions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getQuestions()
+    {
+        return $this->questions;
+    }
+}

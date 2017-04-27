@@ -32,4 +32,3 @@ class Score
         return $this->id;
     }
 }
-
