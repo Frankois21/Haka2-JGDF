@@ -14,4 +14,9 @@ class DefaultController extends Controller
     {
         return $this->render('UserBundle:Default:index.html.twig');
     }
+
+    public function addUser()
+    {
+        return $this->render('UserBundle:FOSUser:ajoutuser.html.twig');
+    }
 }

@@ -2,7 +2,11 @@
 
 
 {% block body %}
-    <h1>Categorie</h1>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+    <h1>Categorie {{ category.category }}</h1>
 
     <table>
         <tbody>
@@ -11,23 +15,24 @@
                 <td>{{ category.id }}</td>
             </tr>
             <tr>
-                <th>Category</th>
-                <td>{{ category.category }}</td>
+                <th>Categorie</th>
+                <td><h1>{{ category.category }}</h1></td>
             </tr>
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('category_index') }} class="btn btn->Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('category_edit', { 'id': category.id }) }}">Edit</a>
-        </li>
-        <li>
+
+            <a href="{{ path('category_index') }}" class="btn btn-default">Retour à la liste</a>
+
+            <a href="{{ path('category_edit', { 'id': category.id }) }}" class="btn btn-default">Edit</a>
+
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" class="btn btn-danger" value="Supprimer">
             {{ form_end(delete_form) }}
-        </li>
-    </ul>
+
+
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
